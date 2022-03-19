@@ -6,7 +6,6 @@
 [node name="Test" type="Spatial"]
 
 [node name="PortalCreator" type="RoomManager" parent="."]
-roomlist = NodePath("../map1/RootNode")
 script = ExtResource( 2 )
 
 [node name="map1" parent="." instance=ExtResource( 1 )]

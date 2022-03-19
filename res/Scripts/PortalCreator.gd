@@ -1,9 +1,12 @@
+tool
 extends RoomManager
+class_name PortalCreator
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	GeneratePortals();
+	pass
+	#GeneratePortals();
 
 func ClearPortals(mapNode:Node)->void:
 	for child in mapNode.get_children():
