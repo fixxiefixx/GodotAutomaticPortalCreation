@@ -1,0 +1,45 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Object",
+"class": "FindNeighbourRoomPointsResult",
+"language": "GDScript",
+"path": "res://Scripts/FindNeighbourRoomPointsResult.gd"
+}, {
+"base": "Object",
+"class": "RoomPoint",
+"language": "GDScript",
+"path": "res://Scripts/RoomPoint.gd"
+}, {
+"base": "Object",
+"class": "Triangle",
+"language": "GDScript",
+"path": "res://Scripts/Triangle.gd"
+} ]
+_global_script_class_icons={
+"FindNeighbourRoomPointsResult": "",
+"RoomPoint": "",
+"Triangle": ""
+}
+
+[application]
+
+config/name="AutomaticPortalCreation"
+run/main_scene="res://Scenes/Test.tscn"
+config/icon="res://icon.png"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
