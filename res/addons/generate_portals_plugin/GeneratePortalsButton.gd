@@ -124,7 +124,7 @@ func GeneratePortalFromConnectedRoomPoints(myRoom:Room, otherRoom:Room, points:A
 		var a:Vector3=p2-p1;
 		var b:Vector3=p3-p1;
 		var n:Vector3=a.cross(b);
-		if n.length_squared() > 0.0001:
+		if n.length_squared() > 0.0001 && (a.angle_to(b)>0.01):
 			n=n.normalized();
 			#We have a working normal for the portal.
 			#Now we have to determine if we have to flip the normal.
@@ -132,6 +132,7 @@ func GeneratePortalFromConnectedRoomPoints(myRoom:Room, otherRoom:Room, points:A
 			var myCenter:Vector3 = getCenterOfBounds(getRoomBounds(myRoom));
 			var otherCenter:Vector3 = getCenterOfBounds(getRoomBounds(otherRoom));
 			var directionToOtherRoom = otherCenter - myCenter;
+			
 			if n.dot(directionToOtherRoom) < 0:
 				n = -n;
 			
@@ -144,8 +145,12 @@ func GeneratePortalFromConnectedRoomPoints(myRoom:Room, otherRoom:Room, points:A
 			portal.linked_room = otherRoom.get_path();
 			var center:Vector3=getCenterOfBounds(bounds);
 			portal.points=generatePortalPointsFromBounds(bounds);
-			#portal.transform.origin=portal.to_local(getCenterOfBounds(bounds));
-			portal.look_at_from_position(center, center + n, Vector3.UP);
+			portal.transform.origin=portal.to_local(center);
+			var upVector:Vector3=Vector3.UP;
+			if n.angle_to(upVector) < 0.1 || n.angle_to(Vector3.DOWN)<0.1:
+				upVector=Vector3.FORWARD;
+			portal.look_at_from_position(center, center + n, upVector);
+			return;
 			
 
 func GeneratePortalsForRoom(room:Room, roomTriangles, mapNode:Node)->void:
