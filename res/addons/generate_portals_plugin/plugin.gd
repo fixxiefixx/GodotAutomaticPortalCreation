@@ -6,7 +6,7 @@ var main_panel_instance
 
 func _enter_tree():
 	main_panel_instance = MainPanel.instance()
-	main_panel_instance.get_node("Button").editor_interface=get_editor_interface();
+	main_panel_instance.get_node("Panel/Button").editor_interface=get_editor_interface();
 	# Add the main panel to the editor's main viewport.
 	get_editor_interface().get_editor_viewport().add_child(main_panel_instance)
 	# Hide the main panel. Very much required.
@@ -27,8 +27,8 @@ func make_visible(visible):
 
 
 func get_plugin_name():
-	return "Create Portals Plugin"
+	return "Create Portals"
 
 
 func get_plugin_icon():
-	return get_editor_interface().get_base_control().get_icon("Node", "EditorIcons")
+	return get_editor_interface().get_base_control().get_icon("Portal", "EditorIcons")

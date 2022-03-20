@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Object",
 "class": "FindNeighbourRoomPointsResult",
 "language": "GDScript",
-"path": "res://Scripts/FindNeighbourRoomPointsResult.gd"
+"path": "res://addons/generate_portals_plugin/FindNeighbourRoomPointsResult.gd"
 }, {
 "base": "RoomManager",
 "class": "PortalCreator",
@@ -22,12 +22,12 @@ _global_script_classes=[ {
 "base": "Object",
 "class": "RoomPoint",
 "language": "GDScript",
-"path": "res://Scripts/RoomPoint.gd"
+"path": "res://addons/generate_portals_plugin/RoomPoint.gd"
 }, {
 "base": "Object",
 "class": "Triangle",
 "language": "GDScript",
-"path": "res://Scripts/Triangle.gd"
+"path": "res://addons/generate_portals_plugin/Triangle.gd"
 } ]
 _global_script_class_icons={
 "FindNeighbourRoomPointsResult": "",
